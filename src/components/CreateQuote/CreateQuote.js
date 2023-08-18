@@ -22,6 +22,7 @@ function CreateQuote() {
   async function fetchCategories() {
     try {
       let res = await getAllCategories();
+      console.log({ res });
       setCategories(res.data);
     } catch (e) {
       console.log(e);
@@ -107,7 +108,8 @@ function CreateQuote() {
               type="date"
               name="date"
               className="form-control"
-              value={formData.date.slice(0, 10)}
+              // value={formData.date.slice(0, 10)}
+              value={"formData.date.slice(0, 10)"}
               onChange={(e) =>
                 setFormData((prevFormData) => ({
                   ...prevFormData,
@@ -136,7 +138,7 @@ function CreateQuote() {
                 {categories.map((category) => {
                   return (
                     <option value={category.id} key={category.id}>
-                      {category.category_name}
+                      {category.name}
                     </option>
                   );
                 })}

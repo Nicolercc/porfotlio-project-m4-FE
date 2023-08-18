@@ -1,12 +1,10 @@
 import Axios from "./Axios";
-import { useParams } from "react-router-dom";
-
-const { input } = useParams;
 
 //get all
 async function getAllQuotes() {
   try {
     let result = await Axios.get("/quotes");
+    return result;
   } catch (e) {
     alert(e.response.data.error);
     return e;
@@ -16,7 +14,7 @@ async function getAllQuotes() {
 //get all by category
 async function getAllQuotesByCategory() {
   try {
-    let result = await Axios.get("/quotes/category");
+    let result = await Axios.get("/categories");
     return result;
   } catch (e) {
     alert(e.response.data.error);
@@ -73,8 +71,7 @@ async function createQuote(quote) {
 //get all
 async function getAllCategories() {
   try {
-    let result = await Axios.get("/quotes/categories");
-
+    let result = await Axios.get("/categories");
     return result;
   } catch (e) {
     alert(e.response.data.error);

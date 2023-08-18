@@ -7,6 +7,7 @@ import CreateQuote from "./components/CreateQuote/CreateQuote";
 import EditQuote from "./components/EditQuote/EditQuote";
 import Quote from "./components/Quote/Quote";
 import AllQuotes from "./components/AllQuotes/AllQuotes";
+import Landing from "./components/LandingPage/Landing";
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
       <Nav />
       <div className="App">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/categories" element={<Categories />} />
+          <Route path="/" element={<Landing />} />
+          <Route path="/quotes" element={<Home />} />
+          {/* <Route path="/categories" element={<Categories />} /> */}
           <Route path="/quotes/new" element={<CreateQuote />} />
           <Route path="/quotes/edit" element={<EditQuote />} />
           <Route path="/quotes/:id" element={<Quote />} />

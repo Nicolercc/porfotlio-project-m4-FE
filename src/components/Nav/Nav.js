@@ -26,7 +26,7 @@ function Nav() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/categories">
+              <NavLink className="nav-link" to="/quotes">
                 Categories
               </NavLink>
             </li>

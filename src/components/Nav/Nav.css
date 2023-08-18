@@ -1,13 +1,13 @@
 header {
-  background-color: #c57dabf0;
+  background-color: #c88cb232;
 }
 
 .navbar-nav .nav-link {
-  color: #fff;
+  color: #845e5e;
   margin-right: 15px;
 }
 
 .navbar-nav .nav-link:hover {
   text-decoration: none;
-  color: #11450e;
+  color: #2d0a17;
 }
