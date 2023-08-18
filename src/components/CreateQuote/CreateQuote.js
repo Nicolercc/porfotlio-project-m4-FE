@@ -9,7 +9,7 @@ function CreateQuote() {
     author: "",
     category: "",
     category_id: "",
-    date_added: "",
+    date_added: new Date().toISOString().slice(0, 10),
     rating: "",
     is_featured: false,
     is_favorite: false,
@@ -51,7 +51,7 @@ function CreateQuote() {
         console.log(formData);
         setFormData(initialFormData);
         alert(`Quote has been created`);
-        navigate(`/quotes/categories/${formData.category_id}`);
+        navigate(`/quotes`);
       }
     } catch (e) {
       return alert(e.response.data.error);
@@ -60,16 +60,18 @@ function CreateQuote() {
   return (
     <div>
       <div className="container card my-5 mx-auto w-75">
-        <h1 className="m-5 d-flex justify-content-center">Create Quote</h1>
+        <h1 className="m-5 d-flex justify-content-center">
+          Unleash your inner author and compose a quote
+        </h1>
         <form className="m-5" onSubmit={handleSubmit}>
           <div className="mb-4">
             <h4 className="form-h4">
               <label htmlFor="quote">Quote: </label>
             </h4>
             <textarea
-              id="quote"
+              id="quote_text"
               type="text"
-              name="quote"
+              name="quote_text"
               className="form-control"
               value={formData.quote_text}
               onChange={(e) =>
@@ -108,8 +110,7 @@ function CreateQuote() {
               type="date"
               name="date"
               className="form-control"
-              // value={formData.date.slice(0, 10)}
-              value={"formData.date.slice(0, 10)"}
+              value={formData.date}
               onChange={(e) =>
                 setFormData((prevFormData) => ({
                   ...prevFormData,

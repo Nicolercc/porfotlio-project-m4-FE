@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import logo from "../Assets/Quotify (6).png";
 import "./Nav.css";
 
 function Nav() {
@@ -7,7 +8,7 @@ function Nav() {
     <header className="navbar navbar-expand-lg navbar-light ">
       <div className="container">
         <NavLink className="navbar-brand" to="/">
-          {/* <img src={Logo} width="200" alt="Logo" /> */} logo aqui
+          <img src={logo} width="200" alt="logo" />
         </NavLink>
         <button
           className="navbar-toggler"
@@ -21,13 +22,13 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <NavLink className="nav-link mx-4" to="/quotes/new">
-                Create Quote
+              <NavLink className="nav-link" to="/quotes">
+                Categories
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/quotes">
-                Categories
+              <NavLink className="nav-link mx-4" to="/quotes/new">
+                Create Quote
               </NavLink>
             </li>
           </ul>

@@ -34,13 +34,13 @@ function Categories() {
     <div className="row">
       <div className="col">
         <div className="list-group sidebar">
-          <div class="hover my-4">
+          <div className="hover my-4">
             <Link to="/">All Recipes</Link>
           </div>
           {categories &&
             categories.map((category) => {
               return (
-                <div class="hover my-4">
+                <div className="hover my-4">
                   <Link key={category.id} to={`/categories/${category.id}`}>
                     {category.name}
                   </Link>

@@ -35,40 +35,40 @@ function Home() {
   }
 
   return (
-    <div>
-      <Categories />
-      <>
-        {quotes &&
-          quotes.map((quote) => (
-            <div className="col-md-3 m-5" key={quote.id}>
-              <div className="card custom-card" style={{ width: "18rem" }}>
-                <div className="card-body">
-                  <blockquote className="blockquote blockquote-custom bg-white p-5 shadow rounded">
-                    <div className="blockquote-custom-icon bg-info shadow-sm"></div>
-                    <h4 className="card-title">{quote.quote_text}</h4>
-                    <p className="mb-0 mt-2 font-italic">
-                      <span className="fw-bold">Author:</span> {quote.author}
-                    </p>
-                    <p className="mb-0 mt-2 font-italic">
-                      <span className="fw-bold">Category:</span>{" "}
-                      {quote.category}
-                    </p>
-
-                    <Link
-                      to={`/quotes/${quote.id}`}
-                      className="btn btn-success d-flex justify-content-center"
-                    >
-                      View More
-                    </Link>
-                    <footer className="blockquote-footer pt-4 mt-4 border-top">
-                      Words to inspire and reflect upon.
-                    </footer>
-                  </blockquote>
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col-md-2 col-lg-2 my-5">
+          <Categories />
+        </div>
+        <div className="col-md-8 col-lg-9 my-5">
+          <div className="row">
+            {quotes.map((quote) => (
+              <div className="col-md-4 my-4" key={quote.id}>
+                <div className="card custom-card" style={{ width: "100%" }}>
+                  <div className="card-body">
+                    <blockquote className="blockquote blockquote-custom bg-white p-3 shadow rounded">
+                      <h5 className="card-title">{quote.quote_text}</h5>
+                      <p className="mb-0 mt-2 font-italic">
+                        <span className="fw-bold">Author:</span> {quote.author}
+                      </p>
+                      <p className="mb-0 mt-2 font-italic">
+                        <span className="fw-bold">Category:</span>{" "}
+                        {quote.category}
+                      </p>
+                      <Link
+                        to={`/quotes/${quote.id}`}
+                        className="btn btn-success mt-3 d-flex justify-content-center"
+                      >
+                        View More
+                      </Link>
+                    </blockquote>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-      </>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

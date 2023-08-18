@@ -46,7 +46,54 @@ function Quote() {
     );
   }
 
-  return <div>Quote</div>;
+  return (
+    <div>
+      <section className="vh-100" style={{ backgroundColor: "#eee" }}>
+        <div className="container py-5 h-100">
+          <div className="row d-flex justify-content-center align-items-center h-100">
+            <div className="col col-lg-9 col-xl-7">
+              <div className="card" style={{ borderRadius: "15px" }}>
+                <div className="card-body p-5">
+                  <div className="text-center mb-4 pb-2">
+                    <img
+                      src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-quotes/bulb.webp"
+                      alt="Bulb"
+                      width="100"
+                    />
+                  </div>
+                  <figure className="text-center mb-0">
+                    <blockquote className="blockquote">
+                      <p className="pb-3">
+                        <i className="fas fa-quote-left fa-xs text-primary"></i>
+                        {quote ? (
+                          <span className="lead font-italic">
+                            {quote.quote_text}
+                          </span>
+                        ) : (
+                          <span className="lead font-italic">
+                            No quote loaded
+                          </span>
+                        )}
+                        <i className="fas fa-quote-right fa-xs text-primary"></i>
+                      </p>
+                    </blockquote>
+                    <figcaption className="blockquote-footer mb-0">
+                      {quote.author}
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div className=" btn-container my-4 ">
+                <button className=" btn btn-primary mx-3">Edit</button>
+                <button className=" btn btn-success mx-3">Delete</button>
+                <button className=" btn btn-danger mx-3">Go back</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 }
 
 export default Quote;
