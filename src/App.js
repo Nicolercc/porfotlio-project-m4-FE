@@ -8,6 +8,7 @@ import EditQuote from "./components/EditQuote/EditQuote";
 import Quote from "./components/Quote/Quote";
 import AllQuotes from "./components/AllQuotes/AllQuotes";
 import Landing from "./components/LandingPage/Landing";
+import DisplayAllQuotes from "./components/AllQuotes/DisplayAllQuotes";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path="/quotes/new" element={<CreateQuote />} />
           <Route path="/quotes/:id/edit" element={<EditQuote />} />
           <Route path="/quotes/:id" element={<Quote />} />
-          <Route path="/quotes/all" element={<AllQuotes />} />
+          <Route path="/all-quotes" element={<DisplayAllQuotes />} />
           <Route path="/quotes/categories/:id" element={<AllQuotes />} />
         </Routes>
       </div>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getAllCategories } from "../Api/Api";
-// import "./Categories.css";
+
 function Categories() {
   const [categories, setCategories] = useState([]);
 
@@ -35,7 +35,7 @@ function Categories() {
       <div className="col">
         <div className="list-group sidebar">
           <div className="hover my-4">
-            <Link to="/">All Recipes</Link>
+            <Link to="all-quotes">All Quotes</Link>
           </div>
           {categories &&
             categories.map((category) => {

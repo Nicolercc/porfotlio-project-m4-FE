@@ -8,6 +8,39 @@ import {
 } from "../Api/Api";
 
 function EditQuote() {
+  const initialFormData = {
+    quote_text: "",
+    author: "",
+    category: "",
+    category_id: "",
+    date_added: "",
+    rating: "",
+    is_featured: false,
+    is_favorite: false,
+  };
+
+  const { id } = useParams();
+  const [formData, setFormData] = useState(initialFormData);
+  const [categories, setCategories] = useState([]);
+
+  const navigate = useNavigate();
+
+  async function deleteQuote(event) {
+    try {
+      const confirmed = window.confirm(
+        "Are you sure you want to delete this quote?"
+      );
+      if (confirmed) {
+        const response = await deleteQuoteById(id);
+        let data = response.data;
+        alert(`The quote named ${data.name} has been deleted`);
+        navigate(`/quotes/categories/${data.category_id}`);
+      }
+    } catch (error) {
+      console.error("Error deleting quote:", error);
+    }
+  }
+
   return (
     <div>
       <div className="container card my-5 mx-auto w-75">
@@ -18,11 +51,17 @@ function EditQuote() {
               <label htmlFor="quote">Quote: </label>
             </h4>
             <textarea
-              id="quote"
+              id="quote_text"
               type="text"
-              name="quote"
+              name="quote_text"
               className="form-control"
-              // value={/* Set your quote value here */}
+              value={formData.quote_text}
+              onChange={(e) =>
+                setFormData((prevFormData) => ({
+                  ...prevFormData,
+                  [e.target.name]: e.target.value,
+                }))
+              }
             />
           </div>
           <div className="mb-4">
@@ -34,7 +73,13 @@ function EditQuote() {
               type="text"
               name="author"
               className="form-control"
-              // value={/* Set your author value here */}
+              value={formData.author}
+              onChange={(e) =>
+                setFormData((prevFormData) => ({
+                  ...prevFormData,
+                  [e.target.name]: e.target.value,
+                }))
+              }
             />
           </div>
           <div className="mb-4">
@@ -42,11 +87,17 @@ function EditQuote() {
               <label htmlFor="date">Date Added: </label>
             </h4>
             <input
-              id="date"
+              id="date_added"
               type="date"
-              name="date"
+              name="date_added"
               className="form-control"
-              // value={/* Set your date value here */}
+              value={formData.date_added}
+              onChange={(e) =>
+                setFormData((prevFormData) => ({
+                  ...prevFormData,
+                  [e.target.name]: e.target.value,
+                }))
+              }
             />
           </div>
           <div className="mb-4">
@@ -58,9 +109,13 @@ function EditQuote() {
                 id="category_id"
                 name="category_id"
                 className="form-select form-control"
-                // value={/* Set your category_id value here */}
+                value={formData.category_id}
               >
-                {/* Map through your categories and render options */}
+                {categories.map((category) => {
+                  return (
+                    <option value={category.id} key={category.id}></option>
+                  );
+                })}
               </select>
             </div>
           </div>
@@ -73,7 +128,13 @@ function EditQuote() {
               type="checkbox"
               name="is_favorite"
               className="form-check-input"
-              // checked={/* Set your is_favorite value here */}
+              checked={formData.is_favorite}
+              onChange={(e) =>
+                setFormData((prevFormData) => ({
+                  ...prevFormData,
+                  [e.target.name]: e.target.checked,
+                }))
+              }
             />
           </div>
           <div className="button-container d-flex justify-content-center m-3 mb-5">

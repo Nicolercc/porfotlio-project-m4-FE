@@ -1,29 +1,28 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { getQuoteByCategoryId, getAllQuotes } from "../Api/Api";
+import React, { useEffect, useState } from "react";
+import { getAllQuotes } from "../Api/Api";
+import { useNavigate } from "react-router-dom";
 import Categories from "../Categories/Categories";
 
-function AllQuotes() {
-  const { id } = useParams();
-  const [quotes, setQuotes] = useState([]);
+function DisplayAllQuotes() {
+  const [allQuotes, setAllQuotes] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetchQuotes();
-  }, [id]);
+    fetchAllQuotes();
+  }, []);
 
-  async function fetchQuotes() {
+  async function fetchAllQuotes() {
     try {
-      let result = await getQuoteByCategoryId(id);
+      let result = await getAllQuotes();
       const data = result.data;
-      setQuotes(data);
+      setAllQuotes(data);
       console.log(data);
     } catch (e) {
       console.log("Error fetching bookmarks:", e);
     }
   }
 
-  if (!quotes.length) {
+  if (!allQuotes.length) {
     return (
       <div className="loader-container">
         <div className="d-flex justify-content-center m-5 loader ">
@@ -43,7 +42,7 @@ function AllQuotes() {
         </div>
         <div className="col-md-9 col-lg-10">
           <div className="row">
-            {quotes.map((quote) => (
+            {allQuotes.map((quote) => (
               <div className="col-md-4 mb-4" key={quote.id}>
                 <figure
                   className="text-center bg-white py-5 px-4 shadow-2 rounded card m-5"
@@ -85,4 +84,4 @@ function AllQuotes() {
   );
 }
 
-export default AllQuotes;
+export default DisplayAllQuotes;
