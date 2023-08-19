@@ -41,7 +41,10 @@ function Categories() {
             categories.map((category) => {
               return (
                 <div className="hover my-4">
-                  <Link key={category.id} to={`/categories/${category.id}`}>
+                  <Link
+                    key={category.id}
+                    to={`/quotes/categories/${category.id}`}
+                  >
                     {category.name}
                   </Link>
                 </div>

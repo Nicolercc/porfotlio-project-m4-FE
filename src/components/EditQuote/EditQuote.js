@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import {
+  getAllCategories,
+  getQuoteById,
+  updateQuoteById,
+  deleteQuoteById,
+} from "../Api/Api";
 
 function EditQuote() {
   return (
     <div>
       <div className="container card my-5 mx-auto w-75">
-        <h1 className="m-5 d-flex justify-content-center">Create Quote</h1>
+        <h1 className="m-5 d-flex justify-content-center">Modify this Quote</h1>
         <form className="m-5">
           <div className="mb-4">
             <h4 className="form-h4">

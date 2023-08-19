@@ -19,9 +19,10 @@ function App() {
           <Route path="/quotes" element={<Home />} />
           {/* <Route path="/categories" element={<Categories />} /> */}
           <Route path="/quotes/new" element={<CreateQuote />} />
-          <Route path="/quotes/edit" element={<EditQuote />} />
+          <Route path="/quotes/:id/edit" element={<EditQuote />} />
           <Route path="/quotes/:id" element={<Quote />} />
           <Route path="/quotes/all" element={<AllQuotes />} />
+          <Route path="/quotes/categories/:id" element={<AllQuotes />} />
         </Routes>
       </div>
     </Router>

@@ -39,7 +39,7 @@ function Landing() {
     <section className="vh-100 gradient-custom">
       <div className="container-fluid">
         <div className="row">
-          <div className="col-md-3 col-lg-2">
+          <div className="col-md-3 col-lg-2 my-5">
             <div className="sidebar">
               <Categories />
             </div>

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getAllQuotesByCategory, getAllQuotes } from "../Api/Api";
 import Categories from "../Categories/Categories";
 
 function Home() {
   const [quotes, setQuotes] = useState([]);
+  const navigate = useNavigate();
 
   const fetchQuotes = async () => {
     try {
@@ -37,33 +38,44 @@ function Home() {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-md-2 col-lg-2 my-5">
+        <div className="col-md-3 col-lg-2 my-5">
           <Categories />
         </div>
-        <div className="col-md-8 col-lg-9 my-5">
+        <div className="col-md-9 col-lg-10 my-5">
           <div className="row">
             {quotes.map((quote) => (
-              <div className="col-md-4 my-4" key={quote.id}>
-                <div className="card custom-card" style={{ width: "100%" }}>
-                  <div className="card-body">
-                    <blockquote className="blockquote blockquote-custom bg-white p-3 shadow rounded">
-                      <h5 className="card-title">{quote.quote_text}</h5>
-                      <p className="mb-0 mt-2 font-italic">
-                        <span className="fw-bold">Author:</span> {quote.author}
-                      </p>
-                      <p className="mb-0 mt-2 font-italic">
-                        <span className="fw-bold">Category:</span>{" "}
-                        {quote.category}
-                      </p>
-                      <Link
-                        to={`/quotes/${quote.id}`}
-                        className="btn btn-success mt-3 d-flex justify-content-center"
-                      >
-                        View More
-                      </Link>
-                    </blockquote>
+              <div className="col-md-4 mb-4" key={quote.id}>
+                <figure
+                  className="text-center bg-white py-5 px-4 shadow-2 rounded card m-5"
+                  style={{ borderRadius: "0.75rem" }}
+                >
+                  <blockquote className="blockquote pb-2">
+                    <p>
+                      <i
+                        className="fas fa-angle-double-left"
+                        style={{ color: "#f9a169" }}
+                      ></i>
+                      <span className="lead font-italic">
+                        {quote.quote_text}
+                      </span>
+                      <i
+                        className="fas fa-angle-double-right"
+                        style={{ color: "#f9a169" }}
+                      ></i>
+                    </p>
+                  </blockquote>
+                  <figcaption className="blockquote-footer mb-0 font-italic">
+                    {quote.author}
+                  </figcaption>
+                  <div className="btn-container my-4 d-flex justify-content-center">
+                    <button
+                      onClick={() => navigate(`/quotes/${quote.id}`)}
+                      className="btn btn-secondary d-flex justify-content-center"
+                    >
+                      View
+                    </button>
                   </div>
-                </div>
+                </figure>
               </div>
             ))}
           </div>

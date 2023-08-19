@@ -28,6 +28,7 @@ function Quote() {
       if (confirmed) {
         const result = await deleteQuoteById(id);
         let data = result.data;
+        console.log(data);
         alert(`the quote by ${data.autor} has been deleted`);
         navigate(`/`);
       }
@@ -49,10 +50,10 @@ function Quote() {
   return (
     <div>
       <section className="vh-100" style={{ backgroundColor: "#eee" }}>
-        <div className="container py-5 h-100">
+        <div className="container py-5  ">
           <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col col-lg-9 col-xl-7">
-              <div className="card" style={{ borderRadius: "15px" }}>
+              <div className="card my-5" style={{ borderRadius: "15px" }}>
                 <div className="card-body p-5">
                   <div className="text-center mb-4 pb-2">
                     <img
@@ -84,9 +85,26 @@ function Quote() {
                 </div>
               </div>
               <div className=" btn-container my-4 ">
-                <button className=" btn btn-primary mx-3">Edit</button>
-                <button className=" btn btn-success mx-3">Delete</button>
-                <button className=" btn btn-danger mx-3">Go back</button>
+                <button
+                  className=" btn btn-primary mx-3"
+                  onClick={() => navigate("/quotes/:id/edit")}
+                >
+                  Edit
+                </button>
+                <button
+                  className=" btn btn-secondary mx-3"
+                  onClick={() => {
+                    deleteQuote();
+                  }}
+                >
+                  Delete
+                </button>
+                <button
+                  className=" btn btn-danger mx-3"
+                  onClick={() => navigate(-1)}
+                >
+                  Go back
+                </button>
               </div>
             </div>
           </div>
