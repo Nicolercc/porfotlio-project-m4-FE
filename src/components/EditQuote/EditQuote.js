@@ -41,11 +41,47 @@ function EditQuote() {
     }
   }
 
+  async function fetchCategories() {
+    try {
+      const response = await getAllCategories();
+      setCategories(response.data);
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
+  }
+
+  useEffect(() => {
+    async function fetchQuoteData() {
+      try {
+        const response = await getQuoteById(id);
+        const quoteData = response.data;
+        setFormData(quoteData);
+      } catch (error) {
+        console.error("Error fetching quote data:", error);
+      }
+    }
+    fetchCategories();
+    fetchQuoteData();
+  }, [id]);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      await updateQuoteById(id, formData);
+
+      alert(`Quote has been edited`);
+      navigate(`/quotes/categories/${formData.category_id}`);
+    } catch (e) {
+      alert(e.response.data.error);
+    }
+  };
+
   return (
     <div>
       <div className="container card my-5 mx-auto w-75">
         <h1 className="m-5 d-flex justify-content-center">Modify this Quote</h1>
-        <form className="m-5">
+        <form className="m-5" onSubmit={handleSubmit}>
           <div className="mb-4">
             <h4 className="form-h4">
               <label htmlFor="quote">Quote: </label>
@@ -110,12 +146,19 @@ function EditQuote() {
                 name="category_id"
                 className="form-select form-control"
                 value={formData.category_id}
+                onChange={(e) =>
+                  setFormData((prevFormData) => ({
+                    ...prevFormData,
+                    [e.target.name]: e.target.value,
+                  }))
+                }
               >
-                {categories.map((category) => {
-                  return (
-                    <option value={category.id} key={category.id}></option>
-                  );
-                })}
+                <option value="">Select a category</option>{" "}
+                {categories.map((category) => (
+                  <option value={category.id} key={category.id}>
+                    {category.name}
+                  </option>
+                ))}
               </select>
             </div>
           </div>
@@ -138,10 +181,21 @@ function EditQuote() {
             />
           </div>
           <div className="button-container d-flex justify-content-center m-3 mb-5">
-            <button type="submit" className="btn btn-primary mx-3">
+            <button type="submit" className="btn btn-secondary mx-3">
               Submit
             </button>
-            <button className="btn btn-success mx-3">Go Back</button>
+            <button
+              className="btn btn-secondary mx-3"
+              onClick={() => navigate(-1)}
+            >
+              Go Back
+            </button>
+            <button
+              className="btn btn-secondary mx-3"
+              onClick={() => deleteQuote()}
+            >
+              Delete
+            </button>
           </div>
         </form>
       </div>
