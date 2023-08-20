@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getAllCategories } from "../Api/Api";
+import "./Categories.css";
 
 function Categories() {
   const [categories, setCategories] = useState([]);
@@ -22,7 +23,7 @@ function Categories() {
 
   if (!categories.length) {
     return (
-      <div className="loader-container">
+      <div className="loader-container loader">
         <div className="d-flex justify-content-center m-5 loader ">
           Loading...
         </div>
