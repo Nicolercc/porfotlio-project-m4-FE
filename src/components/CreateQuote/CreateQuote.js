@@ -47,16 +47,22 @@ function CreateQuote() {
     event.preventDefault();
     try {
       let newQuote = await createQuote(formData);
+
       if (newQuote) {
         console.log(formData);
+
+        const newQuoteId = newQuote.id;
+
         setFormData(initialFormData);
         alert(`Quote has been created`);
-        navigate(`/quotes`);
+
+        navigate(`/quotes/${newQuoteId}`);
       }
     } catch (e) {
       return alert(e.response.data.error);
     }
   };
+
   return (
     <div>
       <div className="container card my-5 mx-auto w-75">

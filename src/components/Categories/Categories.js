@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getAllCategories } from "../Api/Api";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./Categories.css";
 
 function Categories() {
@@ -31,16 +33,19 @@ function Categories() {
   }
 
   return (
-    <div className="row">
-      <div className="col">
-        <div className="list-group sidebar">
-          <div className="hover my-4">
+    <div className="row sidebar" id="sidebar">
+      <div className="">
+        <div className="list-group ">
+          <div className="hover my-4 d-flex justify-content-center">
             <Link to="all-quotes">All Quotes</Link>
           </div>
           {categories &&
             categories.map((category) => {
               return (
-                <div className="hover my-4" key={category.id}>
+                <div
+                  className="hover my-4 d-flex justify-content-center"
+                  key={category.id}
+                >
                   <Link to={`/quotes/categories/${category.id}`}>
                     {category.name}
                   </Link>
