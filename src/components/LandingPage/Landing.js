@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 import { getAllQuotes } from "../Api/Api";
 import Categories from "../Categories/Categories";
 import "./Landing.css";

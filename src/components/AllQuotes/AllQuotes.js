@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { getQuoteByCategoryId, getAllQuotes } from "../Api/Api";
+import { getQuoteByCategoryId } from "../Api/Api";
 import Categories from "../Categories/Categories";
 
 function AllQuotes() {
@@ -9,19 +9,19 @@ function AllQuotes() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    async function fetchQuotes() {
+      try {
+        let result = await getQuoteByCategoryId(id);
+        const data = result.data;
+        setQuotes(data);
+        console.log(data);
+      } catch (e) {
+        console.log("Error fetching bookmarks:", e);
+      }
+    }
+
     fetchQuotes();
   }, [id]);
-
-  async function fetchQuotes() {
-    try {
-      let result = await getQuoteByCategoryId(id);
-      const data = result.data;
-      setQuotes(data);
-      console.log(data);
-    } catch (e) {
-      console.log("Error fetching bookmarks:", e);
-    }
-  }
 
   if (!quotes.length) {
     return (

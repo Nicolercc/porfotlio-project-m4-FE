@@ -12,7 +12,6 @@ function Categories() {
 
   const fetchCategories = async () => {
     try {
-      //const response = await axios.get(url + "/bookmarks/" + id);
       const response = await getAllCategories();
       const data = response.data;
       setCategories(data);
@@ -41,11 +40,8 @@ function Categories() {
           {categories &&
             categories.map((category) => {
               return (
-                <div className="hover my-4">
-                  <Link
-                    key={category.id}
-                    to={`/quotes/categories/${category.id}`}
-                  >
+                <div className="hover my-4" key={category.id}>
+                  <Link to={`/quotes/categories/${category.id}`}>
                     {category.name}
                   </Link>
                 </div>
