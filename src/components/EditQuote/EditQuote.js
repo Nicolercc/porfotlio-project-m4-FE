@@ -11,10 +11,9 @@ function EditQuote() {
   const initialFormData = {
     quote_text: "",
     author: "",
-    category: "",
-    category_id: "",
+    category: "Test Category",
     date_added: "",
-    rating: "",
+    rating: 5,
     is_featured: false,
     is_favorite: false,
   };

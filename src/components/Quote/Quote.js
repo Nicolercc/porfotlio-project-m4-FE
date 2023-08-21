@@ -87,7 +87,7 @@ function Quote() {
               <div className=" btn-container my-4 ">
                 <button
                   className=" btn btn-primary mx-3"
-                  onClick={() => navigate("/quotes/:id/edit")}
+                  onClick={() => navigate(`/quotes/${id}/edit`)}
                 >
                   Edit
                 </button>

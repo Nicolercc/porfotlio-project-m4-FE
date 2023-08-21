@@ -8,11 +8,10 @@ function CreateQuote() {
   const initialFormData = {
     quote_text: "",
     author: "",
-    category: "",
-    category_id: "",
+    category: "Test Category",
     date_added: new Date().toISOString().slice(0, 10),
-    rating: "",
-    is_featured: false,
+    rating: 5,
+    is_featured: true,
     is_favorite: false,
   };
 
@@ -46,17 +45,15 @@ function CreateQuote() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log(formData);
     try {
       let newQuote = await createQuote(formData);
 
       if (newQuote) {
-        console.log(formData);
-
-        const newQuoteId = newQuote.id;
-
+        const newQuoteId = newQuote.data.id;
+        console.log({ newQuote, newQuoteId });
         setFormData(initialFormData);
-        alert(`Quote has been created`);
-
+        // alert(`Quote has been created`);
         navigate(`/quotes/${newQuoteId}`);
       }
     } catch (e) {
@@ -115,7 +112,7 @@ function CreateQuote() {
             <input
               id="date"
               type="date"
-              name="date"
+              name="date_added"
               className="form-control"
               value={formData.date}
               onChange={(e) =>
@@ -126,7 +123,7 @@ function CreateQuote() {
               }
             />
           </div>{" "}
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <h4 className="form-h4 font">
               <label htmlFor="category_id">Category:</label>
             </h4>
@@ -139,7 +136,7 @@ function CreateQuote() {
                 onChange={(e) =>
                   setFormData((prevFormData) => ({
                     ...prevFormData,
-                    [e.target.name]: e.target.value,
+                    [e.target.name]: Number(e.target.value),
                   }))
                 }
               >
@@ -152,7 +149,7 @@ function CreateQuote() {
                 })}
               </select>
             </div>
-          </div>
+          </div> */}
           <div className="mb-4">
             <h4 className="form-h4 mx-2 font">
               <label htmlFor="is_favorite">Is Favorite:</label>
