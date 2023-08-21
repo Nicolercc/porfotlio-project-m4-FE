@@ -30,3 +30,11 @@ Find the suitable guide that matches your environment to get started smoothly:
 > [Backend Repo](https://github.com/Nicolercc/portfolio-project-m4-BE)
 
 ---
+
+### Deployed links:
+
+> [Frontend](https://monumental-fudge-e23f10.netlify.app/)
+
+> [Backend](https://quote-app-deploy.onrender.com/)
+
+---
