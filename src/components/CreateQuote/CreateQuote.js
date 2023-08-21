@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAllCategories, createQuote } from "../Api/Api";
+import "./CreateQuote.css";
 
 function CreateQuote() {
   const initialFormData = {
@@ -66,12 +67,12 @@ function CreateQuote() {
   return (
     <div>
       <div className="container card my-5 mx-auto w-75">
-        <h1 className="m-5 d-flex justify-content-center">
+        <h1 className="m-5 d-flex justify-content-center quote-font fw-bold">
           Unleash your inner author and compose a quote
         </h1>
         <form className="m-5" onSubmit={handleSubmit}>
           <div className="mb-4">
-            <h4 className="form-h4">
+            <h4 className="form-h4 font">
               <label htmlFor="quote">Quote: </label>
             </h4>
             <textarea
@@ -89,7 +90,7 @@ function CreateQuote() {
             />
           </div>{" "}
           <div className="mb-4">
-            <h4 className="form-h4">
+            <h4 className="form-h4 font">
               {" "}
               <label htmlFor="author">Author: </label>
             </h4>
@@ -108,7 +109,7 @@ function CreateQuote() {
             />
           </div>{" "}
           <div className="mb-4">
-            <h4 className="form-h4">
+            <h4 className="form-h4 font">
               <label htmlFor="date">Date Added: </label>
             </h4>
             <input
@@ -126,7 +127,7 @@ function CreateQuote() {
             />
           </div>{" "}
           <div className="mb-4">
-            <h4 className="form-h4">
+            <h4 className="form-h4 font">
               <label htmlFor="category_id">Category:</label>
             </h4>
             <div className="mb-4">
@@ -153,7 +154,7 @@ function CreateQuote() {
             </div>
           </div>
           <div className="mb-4">
-            <h4 className="form-h4 mx-2">
+            <h4 className="form-h4 mx-2 font">
               <label htmlFor="is_favorite">Is Favorite:</label>
             </h4>
 
@@ -171,7 +172,7 @@ function CreateQuote() {
               }
             />
           </div>
-          <div className="button-container d-flex justify-content-center m-3 mb-5">
+          <div className="button-container d-flex justify-content-center m-3 mb-5 ">
             <button type="submit" className="btn btn-primary mx-3">
               Submit
             </button>

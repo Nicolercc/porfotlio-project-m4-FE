@@ -80,10 +80,12 @@ function EditQuote() {
   return (
     <div>
       <div className="container card my-5 mx-auto w-75">
-        <h1 className="m-5 d-flex justify-content-center">Modify this Quote</h1>
+        <h1 className="m-5 d-flex justify-content-center font">
+          Modify this Quote
+        </h1>
         <form className="m-5" onSubmit={handleSubmit}>
           <div className="mb-4">
-            <h4 className="form-h4">
+            <h4 className="form-h4 font">
               <label htmlFor="quote">Quote: </label>
             </h4>
             <textarea
@@ -101,7 +103,7 @@ function EditQuote() {
             />
           </div>
           <div className="mb-4">
-            <h4 className="form-h4">
+            <h4 className="form-h4 font">
               <label htmlFor="author">Author: </label>
             </h4>
             <input
@@ -119,7 +121,7 @@ function EditQuote() {
             />
           </div>
           <div className="mb-4">
-            <h4 className="form-h4">
+            <h4 className="form-h4 font">
               <label htmlFor="date">Date Added: </label>
             </h4>
             <input
@@ -137,7 +139,7 @@ function EditQuote() {
             />
           </div>
           <div className="mb-4">
-            <h4 className="form-h4">
+            <h4 className="form-h4 font">
               <label htmlFor="category_id">Category:</label>
             </h4>
             <div className="mb-4">
@@ -163,7 +165,7 @@ function EditQuote() {
             </div>
           </div>
           <div className="mb-4">
-            <h4 className="form-h4 mx-2">
+            <h4 className="form-h4 mx-2 font">
               <label htmlFor="is_favorite">Is Favorite:</label>
             </h4>
             <input
@@ -180,7 +182,7 @@ function EditQuote() {
               }
             />
           </div>
-          <div className="button-container d-flex justify-content-center m-3 mb-5">
+          <div className="button-container d-flex justify-content-center m-3 mb-5 font">
             <button type="submit" className="btn btn-secondary mx-3">
               Submit
             </button>
