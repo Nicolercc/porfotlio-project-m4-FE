@@ -11,7 +11,7 @@ function Home() {
   const fetchQuotes = async () => {
     try {
       const response = await getAllQuotes();
-      console.log("API Response:", response); // Check the response in the console
+      console.log("API Response:", response);
       if (response && response.data) {
         setQuotes(response.data);
       } else {
