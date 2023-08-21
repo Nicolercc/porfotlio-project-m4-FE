@@ -34,6 +34,14 @@ function Landing() {
   };
   console.log(featuredQuotes);
 
+  if (!quotes.length) {
+    return (
+      <div className="loader-container loader">
+        <div className="d-flex justify-content-center m-5 ">Loading...</div>
+      </div>
+    );
+  }
+
   return (
     <section className=" app-container gradient-custom">
       <div className="container-fluid">
@@ -67,7 +75,7 @@ function Landing() {
                         ))}
                       </div>
                     ) : (
-                      <p>Loading quotes...</p>
+                      <p className="loader">Loading quotes...</p>
                     )}
 
                     <div className=" carousel-inner pt-2 pb-5 center">

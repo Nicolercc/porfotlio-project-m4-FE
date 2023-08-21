@@ -25,10 +25,8 @@ function AllQuotes() {
 
   if (!quotes.length) {
     return (
-      <div className="loader-container">
-        <div className="d-flex justify-content-center m-5 loader ">
-          Loading...
-        </div>
+      <div className="loader-container loader">
+        <div className="d-flex justify-content-center m-5 ">Loading...</div>
       </div>
     );
   }
