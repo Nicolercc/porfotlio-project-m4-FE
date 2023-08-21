@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAllQuotes } from "../Api/Api";
 import Categories from "../Categories/Categories";
+import "../Loading/Loading.css";
 
 function Home() {
   const [quotes, setQuotes] = useState([]);

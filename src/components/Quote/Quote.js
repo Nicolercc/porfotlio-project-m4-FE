@@ -49,9 +49,9 @@ function Quote() {
 
   return (
     <div>
-      <section className="vh-100" style={{ backgroundColor: "#eee" }}>
+      <section className="">
         <div className="container py-5  ">
-          <div className="row d-flex justify-content-center align-items-center h-100">
+          <div className="row d-flex justify-content-center ">
             <div className="col col-lg-9 col-xl-7">
               <div className="card my-5" style={{ borderRadius: "15px" }}>
                 <div className="card-body p-5">
