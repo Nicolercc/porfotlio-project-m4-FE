@@ -37,7 +37,7 @@ function Categories() {
       <div className="">
         <div className="list-group ">
           <div className="hover my-4 d-flex justify-content-center sidebar-font">
-            <Link to="all-quotes" className="sidebar-font">
+            <Link to="/all-quotes" className="sidebar-font">
               All Quotes
             </Link>
           </div>

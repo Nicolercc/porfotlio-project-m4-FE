@@ -53,7 +53,7 @@ function CreateQuote() {
         const newQuoteId = newQuote.data.id;
         console.log({ newQuote, newQuoteId });
         setFormData(initialFormData);
-        // alert(`Quote has been created`);
+        alert(`Quote has been created`);
         navigate(`/quotes/${newQuoteId}`);
       }
     } catch (e) {
@@ -63,9 +63,9 @@ function CreateQuote() {
 
   return (
     <div>
-      <div className="container card my-5 mx-auto w-75">
+      <div className="container card my-5 pt-5 mx-auto w-75">
         <h1 className="m-5 d-flex justify-content-center quote-font fw-bold">
-          Unleash your inner author and compose a quote
+          Unleash your inner author and compose a quote...
         </h1>
         <form className="m-5" onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -123,20 +123,20 @@ function CreateQuote() {
               }
             />
           </div>{" "}
-          {/* <div className="mb-4">
+          <div className="mb-4">
             <h4 className="form-h4 font">
               <label htmlFor="category_id">Category:</label>
             </h4>
             <div className="mb-4">
               <select
-                id="category_id"
-                name="category_id"
+                id="category"
+                name="category"
                 className="form-select form-control"
-                value={formData.category_id}
+                value={formData.category}
                 onChange={(e) =>
                   setFormData((prevFormData) => ({
                     ...prevFormData,
-                    [e.target.name]: Number(e.target.value),
+                    [e.target.name]: e.target.value,
                   }))
                 }
               >
@@ -149,7 +149,7 @@ function CreateQuote() {
                 })}
               </select>
             </div>
-          </div> */}
+          </div>
           <div className="mb-4">
             <h4 className="form-h4 mx-2 font">
               <label htmlFor="is_favorite">Is Favorite:</label>
