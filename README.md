@@ -25,12 +25,6 @@ Find the suitable guide that matches your environment to get started smoothly:
 
 ---
 
-> [Trello](https://trello.com/b/6gSofW25/quotes-app-project)
-
-> [Backend Repo](https://github.com/Nicolercc/portfolio-project-m4-BE)
-
----
-
 #### Links:
 
 > [Website](https://monumental-fudge-e23f10.netlify.app/)
