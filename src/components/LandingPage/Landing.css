@@ -1,4 +1,4 @@
-.gradient-custom {
+/* .gradient-custom {
   background: #c4b5bb;
 
   background: -webkit-linear-gradient(
@@ -8,8 +8,19 @@
   );
 
   background: linear-gradient(to right, rgb(171, 114, 139), rgb(219, 207, 211));
+} */
+
+.card-size {
+  height: 60vh;
 }
 
-/* .card-size {
-  height: 50vh;
-} */
+.quote-font {
+  font-family: "Great Vibes", cursive;
+  font-size: 48px;
+  margin: 10%;
+}
+
+.author-font {
+  font-family: "Ysabeau Infant", sans-serif;
+  font-size: 30px;
+}

@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { getAllQuotes } from "../Api/Api";
 import Categories from "../Categories/Categories";
-import { useNavigate, useParams } from "react-router-dom";
+
 import "./Landing.css";
 
 function Landing() {
   const [quotes, setQuotes] = useState([]);
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
-  const navigate = useNavigate();
-  const { id } = useParams();
 
   async function fetchQuotes() {
     try {
@@ -37,7 +35,7 @@ function Landing() {
   console.log(featuredQuotes);
 
   return (
-    <section className=" gradient-custom">
+    <section className=" app-container gradient-custom">
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-3 col-lg-2 ">
@@ -72,16 +70,16 @@ function Landing() {
                       <p>Loading quotes...</p>
                     )}
 
-                    <div className="carousel-inner pt-2 pb-5 center">
+                    <div className=" carousel-inner pt-2 pb-5 center">
                       {quotes.map((quote, index) => (
                         <div
                           key={index}
-                          className={`carousel-item ${
+                          className={`main-content carousel-item  ${
                             index === currentQuoteIndex ? "active" : ""
                           }`}
                         >
-                          <p>{quote.quote_text}</p>
-                          <p>{quote.author}</p>
+                          <p className="quote-font ">{quote.quote_text}</p>
+                          <p className="author-font">{quote.author}</p>
                         </div>
                       ))}
                     </div>

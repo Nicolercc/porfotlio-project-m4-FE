@@ -36,18 +36,20 @@ function Categories() {
     <div className="row sidebar" id="sidebar">
       <div className="">
         <div className="list-group ">
-          <div className="hover my-4 d-flex justify-content-center">
-            <Link to="all-quotes">All Quotes</Link>
+          <div className="hover my-4 d-flex justify-content-center sidebar-font">
+            <Link to="all-quotes" className="sidebar-font">
+              All Quotes
+            </Link>
           </div>
           {categories &&
             categories.map((category) => {
               return (
                 <div
-                  className="hover my-4 d-flex justify-content-center"
+                  className="hover my-4 d-flex justify-content-center "
                   key={category.id}
                 >
                   <Link to={`/quotes/categories/${category.id}`}>
-                    {category.name}
+                    <p className="sidebar-font"> {category.name} </p>
                   </Link>
                 </div>
               );

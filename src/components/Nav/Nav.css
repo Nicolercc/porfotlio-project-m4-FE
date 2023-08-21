@@ -11,3 +11,8 @@ header {
   text-decoration: none;
   color: #2d0a179e;
 }
+
+.nav-font {
+  font-family: "Ruwudu", serif;
+  font-size: 20px;
+}

@@ -11,8 +11,7 @@
 }
 
 .sidebar .list-group a:hover {
-  background-color: #555;
-  color: blanchedalmond;
+  color: rgb(155, 115, 136);
 }
 
 #sidebar {
@@ -20,4 +19,12 @@
   background-color: #333;
   padding-top: 20px;
   overflow: auto;
+}
+
+.sidebar-font {
+  font-size: 25px;
+  font-weight: 800;
+  font-family: "Ruwudu", serif;
+  margin-top: 20%;
+  margin-bottom: 20%;
 }

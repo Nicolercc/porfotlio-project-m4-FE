@@ -23,12 +23,12 @@ function Nav() {
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <NavLink className="nav-link" to="/quotes">
-                Categories
+                <p className="nav-font"> Categories</p>
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link mx-4" to="/quotes/new">
-                Create Quote
+                <p className="nav-font">Create Quote</p>
               </NavLink>
             </li>
           </ul>

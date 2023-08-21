@@ -36,12 +36,12 @@ function DisplayAllQuotes() {
     <div className="container-fluid">
       <div className="row">
         <div className="col-md-3 col-lg-2 ">
-          <div className="sidebar my-5">
+          <div className="sidebar ">
             <Categories />
           </div>
         </div>
         <div className="col-md-9 col-lg-10">
-          <div className="row">
+          <div className="row mx-4">
             {allQuotes.map((quote) => (
               <div className="col-md-4 mb-4" key={quote.id}>
                 <figure
