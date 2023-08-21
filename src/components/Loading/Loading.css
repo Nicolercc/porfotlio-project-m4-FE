@@ -76,6 +76,5 @@
 
 .custom-shadow {
   box-shadow: 0 0.5rem 1rem rgba(13, 229, 125, 0.623),
-    /* First shadow layer */ 0 10px 10px rgba(0, 0, 0, 0.806),
-    /* Second shadow layer */ 0 20px 20px rgb(0, 0, 0); /* Third shadow layer */
+    0 10px 10px rgba(0, 0, 0, 0.806), 0 20px 20px rgb(0, 0, 0);
 }
