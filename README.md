@@ -31,10 +31,14 @@ Find the suitable guide that matches your environment to get started smoothly:
 
 ---
 
-#### Deployed links:
+#### Links:
 
-> [Frontend](https://monumental-fudge-e23f10.netlify.app/)
+> [Website](https://monumental-fudge-e23f10.netlify.app/)
 
-> [Backend](https://quote-app-deploy.onrender.com/)
+> [Server](https://quote-app-deploy.onrender.com/)
+
+> [Trello](https://trello.com/b/6gSofW25/quotes-app-project)
+
+> [Backend Repo](https://github.com/Nicolercc/portfolio-project-m4-BE)
 
 ---
