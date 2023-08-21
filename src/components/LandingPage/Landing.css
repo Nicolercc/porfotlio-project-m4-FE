@@ -1,11 +1,7 @@
-.card-size {
-  height: 60vh;
-}
-
 .quote-font {
   font-family: "Great Vibes", cursive;
   font-size: 48px;
-  margin: 10%;
+  margin: 5%;
 }
 
 .author-font {
