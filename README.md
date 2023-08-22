@@ -27,7 +27,7 @@ Find the suitable guide that matches your environment to get started smoothly:
 
 #### Links:
 
-> [Website](https://monumental-fudge-e23f10.netlify.app/)
+> [Website](https://timely-eclair-227203.netlify.app/)
 
 > [Server](https://quote-app-deploy.onrender.com/)
 
