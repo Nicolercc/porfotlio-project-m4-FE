@@ -6,6 +6,7 @@ import Categories from "../Categories/Categories";
 function AllQuotes() {
   const { id } = useParams();
   const [quotes, setQuotes] = useState([]);
+
   const navigate = useNavigate();
 
   useEffect(() => {
