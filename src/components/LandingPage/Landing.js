@@ -43,18 +43,13 @@ function Landing() {
   }
 
   return (
-    <section className=" app-container gradient-custom">
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-3 col-lg-2 ">
-            <div className="sidebar">
-              <Categories />
-            </div>
-          </div>
-          <div className="col-md-9 col-lg-10 d-flex align-items-center justify-content-center">
-            <div className="col col-xl-9">
+    <section className=" app-container">
+      <div className="container-fluid" style={{ marginTop: "10rem" }}>
+        <div className="">
+          <div className="">
+            <div className="col col-xl-9 my-5 mx-auto">
               <div className="card card-size">
-                <div className="card-body py-5">
+                <div className="card-body py-5 ">
                   <div
                     id="carouselDarkVariant"
                     className="carousel slide carousel-dark"

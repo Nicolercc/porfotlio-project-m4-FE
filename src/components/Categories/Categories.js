@@ -33,10 +33,10 @@ function Categories() {
   }
 
   return (
-    <div className="row sidebar" id="sidebar">
+    <div className="row sidebar " id="sidebar">
       <div className="">
         <div className="list-group ">
-          <div className="hover my-4 d-flex justify-content-center sidebar-font">
+          <div className="hover my-4 d-flex justify-content-center ">
             <Link to="/all-quotes" className="sidebar-font">
               All Quotes
             </Link>

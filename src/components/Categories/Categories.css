@@ -14,6 +14,13 @@ sidebar {
   color: rgb(155, 115, 136);
 }
 
+.sidebar-font:hover {
+  font-size: 30px;
+}
+.sidebar a:hover {
+  color: rgb(155, 115, 136);
+}
+
 #sidebar {
   height: 100vh;
   background-color: #333;
@@ -25,6 +32,6 @@ sidebar {
   font-size: 25px;
   font-weight: 800;
   font-family: "Ruwudu", serif;
-  margin-top: 20%;
-  margin-bottom: 20%;
+  margin-top: 35%;
+  /* margin-bottom: 20%; */
 }

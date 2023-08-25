@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAllQuotes } from "../Api/Api";
 import { useNavigate } from "react-router-dom";
-import Categories from "../Categories/Categories";
 
 function DisplayAllQuotes() {
   const [allQuotes, setAllQuotes] = useState([]);
@@ -35,15 +34,10 @@ function DisplayAllQuotes() {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-md-3 col-lg-2 ">
-          <div className="sidebar ">
-            <Categories />
-          </div>
-        </div>
-        <div className="col-md-9 col-lg-10">
-          <div className="row mx-4">
+        <div className="">
+          <div className="row mx-2">
             {allQuotes.map((quote) => (
-              <div className="col-md-4 mb-4" key={quote.id}>
+              <div className="col-md-4 " key={quote.id}>
                 <figure
                   className="text-center bg-white py-5 px-4 shadow-2 rounded card m-5"
                   style={{ borderRadius: "0.75rem" }}

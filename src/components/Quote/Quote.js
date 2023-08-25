@@ -50,9 +50,12 @@ function Quote() {
   return (
     <div>
       <section className="">
-        <div className="container py-5  ">
+        <div className="container  ">
           <div className="row d-flex justify-content-center ">
-            <div className="col col-lg-9 col-xl-7">
+            <div
+              className="col col-lg-11 col-xl-9"
+              style={{ marginTop: "15rem" }}
+            >
               <div className="card my-5" style={{ borderRadius: "15px" }}>
                 <div className="card-body p-5">
                   <div className="text-center mb-4 pb-2">

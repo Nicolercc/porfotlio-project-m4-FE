@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAllQuotes } from "../Api/Api";
-import Categories from "../Categories/Categories";
+
 import "../Loading/Loading.css";
 
 function Home() {
@@ -39,9 +39,6 @@ function Home() {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-md-3 col-lg-2 h-100">
-          <Categories />
-        </div>
         <div className="col-md-9 col-lg-10 my-5">
           <div className="row">
             {quotes.map((quote) => (

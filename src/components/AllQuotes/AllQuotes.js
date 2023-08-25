@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getQuoteByCategoryId } from "../Api/Api";
-import Categories from "../Categories/Categories";
 
 function AllQuotes() {
   const { id } = useParams();
@@ -34,13 +33,8 @@ function AllQuotes() {
 
   return (
     <div className="container-fluid">
-      <div className="row">
-        <div className="col-md-3 col-lg-2 ">
-          <div className="sidebar">
-            <Categories />
-          </div>
-        </div>
-        <div className="col-md-9 col-lg-10">
+      <div className="">
+        <div className="">
           <div className="row">
             {quotes.map((quote) => (
               <div className="col-md-4 mb-4" key={quote.id}>

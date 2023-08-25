@@ -8,7 +8,7 @@ function Nav() {
     <header className="navbar navbar-expand-lg navbar-light ">
       <div className="container">
         <NavLink className="navbar-brand" to="/">
-          <img src={logo} width="120" alt="logo" />
+          <img src={logo} width="180" alt="logo" />
         </NavLink>
         <button
           className="navbar-toggler"

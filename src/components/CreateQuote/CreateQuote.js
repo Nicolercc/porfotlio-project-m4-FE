@@ -62,7 +62,7 @@ function CreateQuote() {
   };
 
   return (
-    <div>
+    <div style={{ margin: "10rem" }}>
       <div className="container card my-5 pt-5 mx-auto w-75">
         <h1 className="m-5 d-flex justify-content-center quote-font fw-bold">
           Unleash your inner author and compose a quote...
@@ -87,7 +87,7 @@ function CreateQuote() {
             />
           </div>{" "}
           <div className="mb-4">
-            <h4 className="form-h4 font">
+            <h4 className="form-h4 font ">
               {" "}
               <label htmlFor="author">Author: </label>
             </h4>
@@ -152,7 +152,7 @@ function CreateQuote() {
           </div>
           <div className="mb-4">
             <h4 className="form-h4 mx-2 font">
-              <label htmlFor="is_favorite">Is Favorite:</label>
+              <label htmlFor="is_favorite">Favorite:</label>
             </h4>
 
             <input
